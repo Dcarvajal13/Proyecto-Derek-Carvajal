@@ -11,22 +11,55 @@ import datetime as dt
 class APP:
 
     def start(self):
-        self.menu_cliente()
+        self.mostrar_menu_principal()
 
     lista_productos = []
     lista_ventas = []
     lista_envios = []
     lista_pagos = []
 
+    def mostrar_menu_principal(self):
+        while True:
+            print("\n--- MENÚ PRINCIPAL ---")
+            print("1. Productos")
+           
+            print("2. Clientes")
+            print("3. Ventas")
+            print("4. Pagos")
+            print("5. Envios")
+            print("6. Indicadores")
+            print("7. Salir")
+            opcion = input("Seleccione una opción: ").strip()
+            if opcion == "1":
+                self.menu_productos()   
+            elif opcion == "2":
+                self.menu_cliente()
+            elif opcion == "3":
+                self.menu_ventas()
+            elif opcion == "4":
+                self.menu_pagos()
+            elif opcion == "5":
+                self.menu_envios()
+            elif opcion == "6":
+                self.menu_indicadores()
+            elif opcion == "7":
+                print('Gracias por preferirnos, hasta luego')
+                break
+            else:
+                print("Opción no válida")
+
+        
+                    
+    
     def menu_cliente(self):
         while True:
-            print("Bienvenido al sistema de ventas\n\n"
-                '--------MENU--------\n\n'
+            print("Bienvenido al sistema de clientes\n\n"
+                '--------MENU CLIENTES--------\n\n'
                 "1. Registrar cliente\n"
                 "2. Modificar cliente\n"
                 "3. Eliminar cliente\n"
                 "4. Buscar cliente\n"
-                "5. Salir\n\n")
+                "5. Regresar\n\n")
             
             
             opcion = input("Seleccione una opcion: ")
@@ -60,3 +93,24 @@ class APP:
                     Cliente.buscar_cliente_correo(Cliente)
                 else:
                     print("Opcion no valida")
+                    
+            elif opcion == "5":  #Regresar a menu principal
+                self.start()
+            else:
+                print("Opcion no valida")
+
+    def menu_productos(self):
+        while True:
+            print('Bienvenido al sistema de productos\n\n'
+                  '--------MENU PRODUCTOS--------\n\n'
+                  '1. Agregar nuevos productos\n'
+                  '2. Buscar productos\n'
+                  '3. Modificar productos\n'
+                  '4. Eliminar productos\n'
+                  '5. Regresar\n\n')
+            
+            opcion = input('Seleccione una opcion: ')
+
+            if opcion == '1':
+                Producto.agregar_producto(Producto)
+            elif opcion == '2':
