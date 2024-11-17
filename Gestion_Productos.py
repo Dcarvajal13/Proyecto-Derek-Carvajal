@@ -29,9 +29,24 @@ class Producto:
             nuevo_productos = Producto(nombre_producto, descripcion, precio, categoria, inventario, modelo_vehiculo)
             Producto.lista_productos.append(nuevo_productos)
             print('Su producto ha sido agregado exitosamente')
-
+            
     def buscar_producto(self):
-         ke
+        nombre_producto = input('Ingrese el nombre del producto a buscar: ')
+        for producto in Producto.lista_productos:
+            if producto.nombre_producto.lower() == nombre_producto.lower():
+                print(producto)
+            return
+        print('Producto no encontrado')
+         
+
+         
+         
+        
+         
+         
+         
+         
+         
 
 
         

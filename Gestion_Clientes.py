@@ -276,4 +276,4 @@ class Cliente_juridico(Cliente):
             cliente_juridico = Cliente_juridico(razon_social, cedula_rif, correo, direccion, telefono, nombre_contacto, telefono_contacto, correo_contacto)
             Cliente.lista_clientes.append(cliente_juridico)
             print("Cliente jurídico registrado exitosamente.")
-         
+            

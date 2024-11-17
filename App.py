@@ -114,3 +114,15 @@ class APP:
             if opcion == '1':
                 Producto.agregar_producto(Producto)
             elif opcion == '2':
+                Producto.buscar_producto(Producto)
+            elif opcion == '3':
+                Producto.modificar_producto(Producto)
+            elif opcion == '4':
+                Producto.eliminar_producto(Producto)
+            elif opcion == '5':
+                break
+            else:
+                print('Opcion no valida')
+
+    
+    
